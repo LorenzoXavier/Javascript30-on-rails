@@ -1,0 +1,61 @@
+<%= form_with(model: item) do |form| %>
+  <% if item.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(item.errors.count, "error") %> prohibited this item from being saved:</h2>
+
+      <ul>
+        <% item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container pt-3 pb-3">
+  <div class="card">
+    <div class="card-header">
+      <h2>New Item Completed</h2>
+    </div>
+    <div class="card-body">
+        <div class=" mb-3">
+          <%= form.label :title, style: "display: block" %>
+          <%= form.text_field :title, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :image, style: "display: block" %>
+          <%= form.text_field :image, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :lesson, style: "display: block" %>
+          <%= form.text_field :lesson, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :description, style: "display: block" %>
+          <%= form.text_field :description, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :link, style: "display: block" %>
+          <%= form.text_field :link, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :code, style: "display: block" %>
+          <%= form.text_field :code, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.label :css, style: "display: block" %>
+          <%= form.text_field :css, required: true, class: "form-control" %>
+        </div>
+
+        <div class=" mb-3">
+          <%= form.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
