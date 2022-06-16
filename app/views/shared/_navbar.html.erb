@@ -2,14 +2,29 @@
 <div class="nav-wrapper">
   <div class="nav-container d-none d-lg-block">
     <nav>
-      <a href="https://www.weigheasy.com/">
-        <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644102358/Weigh_easy_logo_no_ring_blue_bbijgk.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
+      <a href="https://localhost:3000">
+        <img alt="Javasrcipt" src="https://res.cloudinary.com/du089vmk8/image/upload/v1655416826/js_logo.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
       </a>
-          <ul>
-            <% unless user_signed_in? %>
-              <li><%= link_to "Login", new_user_session_path%></li>
-              <li><%= link_to "Sign Up", new_user_registration_path%></li>
-              <% else %>
+          <ul class="social-icons">
+            <ul class="no-animation">
+              <li style="margin-right: 3rem; background-color:none;"><%= link_to "Home", root_path, style: "background-color: #effbfb;" %></li>
+            </ul>
+            <% if user_signed_in? != true %>
+              <!-- <li></%= link_to "Login", new_user_session_path %></li> -->
+              <%= mail_to "weigheasy2022@gmail.com" do %>
+                <i class="fa fa-envelope"></i>
+              <% end %>
+              <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook-f" href="#"></i></a></li>
+              <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+              <li><a class="whatsapp" href="#" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+              <div style="margin: 0 3rem;">
+                <%= link_to "https://github.com/LorenzoXavier" do %>
+                  <li><i class="fa fa-github" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
+                <% end %>
+              </div>
+            </ul>
+            <% elsif current_user.email == Rails.application.credentials.admin_user_email %>
               <li><%= link_to "New item", items_path %></li>
               <div class="avatar-container">
                 <li class="nav-item dropdown">
@@ -18,10 +33,11 @@
                   <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
 
                     <li><a><%= link_to "Edit", edit_user_registration_path, class: "dropdown-item" %></a></li>
-                    <li><a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></a></li>
+                    <li><a><%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></a></li>
                   </ul>
                 </li>
               </div>
+            <% else %>
             <% end %>
           </ul>
       </nav>
@@ -53,7 +69,7 @@
               </div>
              <li><%= link_to "Edit profile", edit_user_registration_path %></li>
              <li><%= link_to "New item", items_path %></li>
-             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+             <li><%= button_to "Sign Out", destroy_user_session_path, method: :delete%></li>
             <% end %>
         </ul>
       </div>

@@ -15,6 +15,9 @@ $silver: #aaa9ad;
 $bronze: #8a3d36;
 $platinum: #e0dccb;
 
+.no-animation li a:hover {
+  color: #0d6efd;
+}
 
 .nav-link {
   padding: 0rem 1rem !important;
@@ -96,7 +99,7 @@ nav ul li{
 // }
 
 nav ul li a{
-  padding: 1rem 0;
+  // padding: 1rem 0;
   margin: 0 3rem;
   position: relative;
   letter-spacing: 2px;
@@ -142,10 +145,10 @@ nav ul li a::after{
   display: none;
 }
 
-nav ul li a:hover::before,
-nav ul li a:hover::after{
-  transform: scaleX(1);
-}
+// nav ul li a:hover::before,
+// nav ul li a:hover::after{
+//   transform: scaleX(1);
+// }
 
 @keyframes slideIn {
   from{
