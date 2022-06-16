@@ -1,1 +1,31 @@
-index page
+<div class="container">
+  <h1>Javasrcipt30</h1>
+  <h3>An ovierview of my Javascript30 course</h3>
+
+  <div class="row">
+    <% 4.times do %>
+    <% @items.each do |item| %>
+      <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 col-xxl-4 mt-3">
+        <div class="card text-center">
+          <div class="card-header">
+            <%= item.title %>
+          </div>
+          <img src="<%= item.image %>" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Class number <%= item.lesson %></h5>
+            <p class="card-text"><%= item.description %></p>
+            <div class="row">
+              <div class="col-4 text-center"><%= link_to "View", "#{item.link}", class: "btn btn-primary", style: "min-width: 60px" %></div>
+              <div class="col-4 text-center"><%= link_to "Code", "#{item.link}", class: "btn btn-success", style: "min-width: 60px" %></div>
+              <div class="col-4 text-center"><%= link_to "CSS", "#{item.link}", class: "btn btn-danger", style: "min-width: 60px" %></div>
+            </div>
+          </div>
+          <div class="card-footer text-muted">
+            <%= time_ago_in_words(item.created_at) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
