@@ -66,8 +66,8 @@
 
   function removeTransition(e) {
     if(e.propertyName !== 'transform') return; // skip if not transform
-    console.log(e.propertyName);
-    console.log(this); // this is equal to the key as this is the property it is being called against
+    // console.log(e.propertyName);
+    // console.log(this); // this is equal to the key as this is the property it is being called against
     this.classList.remove('playing')
   };
 
