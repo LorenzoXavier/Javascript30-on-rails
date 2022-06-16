@@ -1,0 +1,62 @@
+<!-- ?navbar for screens wider than 770px -->
+<div class="nav-wrapper">
+  <div class="nav-container d-none d-lg-block">
+    <nav>
+      <a href="https://www.weigheasy.com/">
+        <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644102358/Weigh_easy_logo_no_ring_blue_bbijgk.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
+      </a>
+          <ul>
+            <% unless user_signed_in? %>
+              <li><%= link_to "Login", new_user_session_path%></li>
+              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+              <% else %>
+              <li><%= link_to "New item", items_path %></li>
+              <div class="avatar-container">
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= image_tag "avatar.png", class: "avatar", alt: "avatar" %>
+                  </a>
+                  <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+
+                    <li><a><%= link_to "Edit", edit_user_registration_path, class: "dropdown-item" %></a></li>
+                    <li><a><%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "dropdown-item"%></a></li>
+                  </ul>
+                </li>
+              </div>
+            <% end %>
+          </ul>
+      </nav>
+  </div>
+</div>
+<!-- hamburger icon for devices smaller than 770px wide -->
+<div class="menu-wrap d-lg-none">
+  <input type="checkbox" class="toggler">
+  <div class="hamburger"><div></div></div>
+  <div class="menu">
+    <div>
+      <div>
+        <ul>
+          <a href="https://www.weigheasy.com/">
+            <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644103048/Weigh_easy_logo_no_border_white_yvh3pi.svg" style="width: 100px; height:60px; margin-top: 20px; margin-bottom: 5px;">
+          </a>
+           <br><br>
+            <% unless user_signed_in? %>
+              <li><%= link_to "Login", new_user_session_path%></li>
+              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+            <% else %>
+              <div class="avatar-container">
+                <div class="hamburger-avatar-sizing">
+                 <li>
+                   <%= image_tag "avatar.png", class: "avatar-hamburger", alt: "avatar" %>
+                   <br><br>
+                 </li>
+                </div>
+              </div>
+             <li><%= link_to "Edit profile", edit_user_registration_path %></li>
+             <li><%= link_to "New item", items_path %></li>
+             <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete%></li>
+            <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

@@ -8,7 +8,9 @@
           <div class="card-header">
             <%= item.title %>
           </div>
-          <img src="<%= item.image %>" class="card-img-top" alt="...">
+          <%= link_to item.link do %>
+            <img src="<%= item.image %>" class="card-img-top" alt="#{item.title}">
+          <% end %>
           <div class="card-body">
             <h5 class="card-title">Class number <%= item.lesson %></h5>
             <p class="card-text"><%= item.description %></p>
