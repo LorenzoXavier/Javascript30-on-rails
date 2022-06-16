@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Javascript30OnRails</title>
+    <title>Javascript30-Rails</title>
+    <%= favicon_link_tag asset_path('favicon.ico'), rel: 'icon', type: "images/x-icon" %>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,6 +13,9 @@
   </head>
 
   <body>
+    <%= render "shared/navbar" %>
+    <%= render "shared/flash" %>
     <%= yield %>
+    <%= render "shared/footer" %>
   </body>
 </html>

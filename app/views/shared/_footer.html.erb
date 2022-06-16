@@ -1,0 +1,48 @@
+<footer class="site-footer mt-3" >
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12 col-lg-6">
+        <h6>About</h6>
+        <p class="text-justify"><i>Javascript30 tasks built on rails </i></p>
+      </div>
+      <div class="col-xs-6 col-lg-3">
+        <h6>Javascript challenges</h6>
+        <ul class="footer-links">
+          <% Item.all.map do |item| %>
+            <li> <%=link_to "#{item.title}", root_path %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="col-xs-6 col-lg-3">
+        <h6>Quick Links</h6>
+        <ul class="footer-links">
+          <li><%= link_to "Home Page", root_path %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-sm-6 col-xs-12">
+        <p class="copyright-text">Copyright &copy; 2022 <br>All Rights Reserved by Lorenzo.
+     <!-- <a href="#">Scanfcode</a>. -->
+        </p>
+      </div>
+      <div class="col-lg-4 col-sm-6 col-xs-12">
+        <ul class="social-icons">
+          <%= mail_to "lorenzo.cursley@gmail.com" do %><i class="fa fa-envelope"></i><% end %>
+          <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook-f"></i></a></li> -->
+          <!-- <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> -->
+          <li><a class="whatsapp" href="https://wa.me/00447594638937" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+          <%= link_to "https://github.com/LorenzoXavier" do %>
+            <li><i class="fa fa-github" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
+          <% end %>
+          <!-- <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
