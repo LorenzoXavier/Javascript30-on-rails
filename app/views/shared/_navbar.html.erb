@@ -10,8 +10,8 @@
               <li style="margin-right: 3rem; background-color:none;"><%= link_to "Home", root_path, style: "background-color: #effbfb;" %></li>
             </ul>
             <% if user_signed_in? != true %>
-              <li></%= link_to "Sign Up", new_user_registration_path%></li>
-              <li><%= link_to "Login", new_user_session_path %></li>
+              <!-- <li></%= link_to "Sign Up", new_user_registration_path%></li>
+              <li></%= link_to "Login", new_user_session_path %></li> -->
               <%= mail_to "weigheasy2022@gmail.com" do %>
                 <i class="fa fa-envelope"></i>
               <% end %>
