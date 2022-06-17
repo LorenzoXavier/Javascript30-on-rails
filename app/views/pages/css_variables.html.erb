@@ -1,0 +1,28 @@
+<div class="css_variables-body">
+  <h1>Update CSS Variables with <span class='h1'>JS</span></h1>
+  <div class="controls">
+    <label for="spacing">Spacing:</label>
+    <input id="spacing" type="range" name="spacing" min="10" max="200" value="10" data-sizing="px">
+    <label for="blur">Blur:</label>
+    <input id="blur" type="range" name="blur" min="0" max="25" value="10" data-sizing="px">
+    <label for="base">Base Color</label>
+    <input id="base" type="color" name="base" value="#ffc600">
+  </div>
+  <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" class="mb-5">
+</div>
+
+<script>
+  const inputs = document.querySelectorAll('.controls input');
+
+  function handleUpdate() {
+    // this == the input you are hovering over. we set porperty by interpolating this name into the setProperty
+    // suffix value add px to sizing and nothing to base colour as .sizing isn;t present
+    const suffix = this.dataset.sizing || '';
+    document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+  }
+
+  // Listen for changes on inputs
+  inputs.forEach(input => input.addEventListener('change', handleUpdate))
+  // listen for mouse move on inputs
+  inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
+</script>
