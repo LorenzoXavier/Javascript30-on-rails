@@ -14,11 +14,11 @@
           <div class="card-body">
             <h5 class="card-title">Class number <%= item.lesson %></h5>
             <p class="card-text"><%= item.description %></p>
-            <div class="row">
-              <div class="col-4 text-center"><%= link_to "View", "#{item.link}", class: "btn btn-primary", style: "min-width: 60px" %></div>
-              <div class="col-4 text-center"><%= link_to "Code", "#{item.code}", class: "btn btn-success", style: "min-width: 60px" %></div>
-              <div class="col-4 text-center"><%= link_to "CSS", "#{item.css}", class: "btn btn-danger", style: "min-width: 60px" %></div>
-            </div>
+          </div>
+          <div class="row pb-3">
+            <div class="col-4 text-center"><%= link_to "View", "#{item.link}", class: "btn btn-primary", style: "min-width: 60px" %></div>
+            <div class="col-4 text-center"><%= link_to "Code", "#{item.code}", class: "btn btn-success", style: "min-width: 60px" %></div>
+            <div class="col-4 text-center"><%= link_to "CSS", "#{item.css}", class: "btn btn-danger", style: "min-width: 60px" %></div>
           </div>
           <div class="card-footer text-muted">
             <%= time_ago_in_words(item.created_at) %>
