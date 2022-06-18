@@ -2,7 +2,7 @@
 <div class="nav-wrapper">
   <div class="nav-container d-none d-lg-block">
     <nav>
-      <a href="https://localhost:3000">
+      <a href="https://js-30-rails.herokuapp.com">
         <img alt="Javasrcipt" src="https://res.cloudinary.com/du089vmk8/image/upload/v1655416826/js_logo.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
       </a>
           <ul class="social-icons">
@@ -10,8 +10,8 @@
               <li style="margin-right: 3rem; background-color:none;"><%= link_to "Home", root_path, style: "background-color: #effbfb;" %></li>
             </ul>
             <% if user_signed_in? != true %>
-              <!-- <li></%= link_to "Sign Up", new_user_registration_path%></li>
-              <li></%= link_to "Login", new_user_session_path %></li> -->
+              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+              <li></%= link_to "Login", new_user_session_path %></li>
               <%= mail_to "weigheasy2022@gmail.com" do %>
                 <i class="fa fa-envelope"></i>
               <% end %>
