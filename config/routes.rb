@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get '/css-variables', to: "pages#css_variables"
   get '/array-one', to: "pages#array_one"
   get '/image-gallery', to: "pages#image_gallery"
+  get '/type-ahead', to: "pages#type_ahead"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
