@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/image-gallery', to: "pages#image_gallery"
   get '/type-ahead', to: "pages#type_ahead"
   get '/array-two', to: "pages#array_two"
+  get '/dev-tools', to: "pages#dev_tools"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
