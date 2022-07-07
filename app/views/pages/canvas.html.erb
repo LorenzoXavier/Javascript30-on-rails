@@ -9,29 +9,48 @@
   // changin the height and with to vh
   canvas.width = window.innerWidth * 0.9;
   canvas.height = window.innerHeight * 0.75;
-  ctx.strokeStyle = 'red';
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';
-
   // dummy varaibles
   let isDrawing = false;
   let lastX = 0;
   let lastY = 0;
+  // starting point of hue in hsl of 0. see https://mothereffinghsl.com for scale
+  let hue = 0;
+  // direction true means the line increments and it is continually pressed
+  let direction = true;
 
   function draw(e) {
     if(!isDrawing) return; // this line stops the fn from running when the mouse is not down
 
     console.log(e);
+    // see https://mothereffinghsl.com for strokeStyle explanation
+    ctx.strokeStyle = `hsl(${hue}, 100%, 50%)`;
     ctx.beginPath();
     // start from
     ctx.moveTo(lastX, lastY);
     // go to
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
-    ctx.lineWidth = 50;
-    lastX = e.offsetX
-    lastY = e.offsetY
-
+    // google globalCompositeOperation to see different types for below
+    ctx.globalCompositeOperation = 'multiply';
+    [lastX, lastY] = [e.offsetX, e.offsetY];
+    // increment hue
+    hue++;
+    // when it hits 360, goes back to 0
+    if(hue >= 360) {
+      hue = 0;
+    };
+    // when the line width hits 100 it flips the direction when it hits 100
+    if(ctx.lineWidth >= 100 || ctx.lineWidth <= 1) {
+      direction = !direction;
+    };
+    // if dirction is true (going up), increment, if false (going down), reduce
+    if(direction) {
+      ctx.lineWidth ++;
+    } else {
+      ctx.lineWidth --;
+    }
   };
 
   canvas.addEventListener('mousedown', (e) => {
@@ -42,7 +61,5 @@
   canvas.addEventListener('mousemove', draw)
   canvas.addEventListener('mouseup', () => isDrawing = false )
   canvas.addEventListener('mouseout', () => isDrawing = false )
-
-
 </script>
 
