@@ -1,0 +1,76 @@
+<div class="checkbox-body pt-2 pb-2">
+  <!-- The following is a common layout you would see in an email client.
+  When a user clicks a checkbox, holds Shift, and then clicks another checkbox a few rows down, all the checkboxes inbetween those two checkboxes should be checked. -->
+  <div class="inbox">
+    <div class="item">
+      <input type="checkbox">
+      <p>This is an inbox layout.</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check one item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Hold down your Shift key</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Check a lower item</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Everything in between should also be set to checked</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Works from bottom up too!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Just regular JavaScript</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Enjoy!</p>
+    </div>
+    <div class="item">
+      <input type="checkbox">
+      <p>Message me if you like it!</p>
+    </div>
+  </div>
+
+  <script>
+    // select checkboxes
+    const checkboxes = document.querySelectorAll(`.inbox input[type="checkbox"]`);
+
+    let lastChecked;
+
+    // handling when checked
+    function handleCheck(e) {
+      // check if they have the shift key down
+      // AND check that they are checking the box
+      let inBetween = false;
+      if(e.shiftKey && this.checked) {
+        console.log("shift engaged");
+        // go ahead and do what we want
+        // loop over evey check box
+        checkboxes.forEach(checkbox => {
+          // console.log(checkbox);
+          if(checkbox === this || checkbox === lastChecked) {
+            inBetween = !inBetween;
+          }
+
+          if(inBetween) {
+            checkbox.checked = true;
+          }
+        });
+
+      }
+      lastChecked = this;
+    }
+
+    // Add the listener for when a checkbox is checked
+    checkboxes.forEach(checkbox => checkbox.addEventListener('click', handleCheck))
+  </script>
+</div>

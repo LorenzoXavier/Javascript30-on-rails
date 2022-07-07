@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   get '/array-two', to: "pages#array_two"
   get '/canvas', to: "pages#canvas"
   get '/dev-tools', to: "pages#dev_tools"
+  get '/checkbox', to: "pages#checkbox"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
