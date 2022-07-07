@@ -1,0 +1,86 @@
+<div class="text-center pt-3"><h1><em>Psst: have a look at the JavaScript Console</em> 💁</h1></div>
+<div class="container">
+  <h4 onClick="makeGreen()" class="text-center">**Click on elements on inspector, then right click and select break on - attribute modified. This will add a debuger into code which will work like a binding.pry in the inspector console so you can see what is happening with the JS**<br>**to remove the break on, go back to elements and reight click, deselect break on - attribute modified.</h4>
+</div>
+<div style="height: 50vh;"></div>
+
+<script>
+  const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+  function makeGreen() {
+    const h4 = document.querySelector('h4');
+    h4.style.color = 'red';
+    h4.style.fontSize = '50px';
+  }
+
+  // Regular
+  console.log('Hello')
+
+  // Interpolated - when using the %s, the second value will be interpolated in
+  console.log('hello I am a %s string!', 'interpolated')
+  // must use back ticks to interpolate using the ${} syntax
+  let interpolation = 'I am here also here'
+  console.log(`Hello ${interpolation}`)
+
+  // Styled - when using %c, the second value will add that styling to the console.log
+  console.log('%c I am some great text', 'font-size: 30px; background: red;')
+
+  // warning! - throws up a warning
+  console.warn('Oh no!')
+
+  // Error - throws up an error
+  console.error('Error here')
+
+  // Info - throws up an info line on console
+  console.info('Coming here for all the info')
+
+  // Testing - boolean argument - if false it displays the second value
+  console.assert(1 === 1, `Doesn't display because it is true`)
+  console.assert(1 === 2, 'One is not equal to two!')
+
+  const h4 = document.querySelector('h4');
+  console.assert(h4.classList.contains('text-end'), 'The h4 does not contain the class text-end')
+
+  // clearing - clears the console - comented out so it doesn't clear the console!
+  // console.clear();
+
+  // Viewing DOM Elements - log will show you the element, dir will give you all the different methods, properties, class list, styling etc
+  console.log(h4);
+  console.dir(h4);
+
+  // Grouping together - open and close the group with the same interpolation - in this case dogs name. This will group everything inbetween group and groupEnd under that dogs name. Adding Collapsed to the group function will default it to collapsed
+  dogs.forEach(dog => {
+    console.groupCollapsed(`${dog.name}`);
+    // console.log(`This is ${dog.name}`);
+    console.log(`${dog.name} is ${dog.age} years old`);
+    console.log(`${dog.name} is ${dog.age *7} dog years old`);
+    console.groupEnd(`${dog.name}`);
+
+  })
+
+  // counting - tells you how many you have counted when run
+  console.count('Wes');
+  console.count('Wes');
+  console.count('Steve');
+  console.count('Steve');
+  console.count('Wes');
+  console.count('Steve');
+  console.count('Wes');
+  console.count('Steve');
+  console.count('Steve');
+  console.count('Steve');
+  console.count('Steve');
+  console.count('Steve');
+
+  // timing - start the funtion with time, and end with timeEnd. It will print how long it took
+  console.time('fetching data');
+  fetch('https://api.github.com/users/LorenzoXavier')
+    .then(data => data.json())
+    .then(data => {
+      console.timeEnd('fetching data');
+      console.log(data);
+  });
+
+  // table - does a table on console
+  console.table(dogs)
+</script>
