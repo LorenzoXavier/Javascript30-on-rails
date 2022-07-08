@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/canvas', to: "pages#canvas"
   get '/dev-tools', to: "pages#dev_tools"
   get '/checkbox', to: "pages#checkbox"
+  get '/custom-video-player', to: "pages#custom_video_player"
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
