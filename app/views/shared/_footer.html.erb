@@ -6,17 +6,20 @@
         <p class="text-justify"><i>Javascript30 tasks built on rails </i></p>
       </div>
       <div class="col-xs-6 col-lg-3">
-        <h6>Javascript challenges</h6>
+        <h6>Javascript challenges ...</h6>
         <ul class="footer-links">
-          <% Item.all.map do |item| %>
+          <% Item.first(15).each do |item| %>
             <li> <%=link_to "#{item.title}", item.link %></li>
           <% end %>
         </ul>
       </div>
       <div class="col-xs-6 col-lg-3">
-        <h6>Quick Links</h6>
+        <h6>... continued</h6>
         <ul class="footer-links">
-          <li><%= link_to "Home Page", root_path %></li>
+          <!--
+          </% Item.last(15).each do |item| %>
+            <li> </%=link_to "#{item.title}", item.link %></li>
+          </% end %> -->
         </ul>
       </div>
     </div>
@@ -36,7 +39,7 @@
           <!-- <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li> -->
           <li><a class="whatsapp" href="https://wa.me/00447594638937" target="blank"><i class="fa fa-whatsapp"></i></a></li>
           <%= link_to "https://github.com/LorenzoXavier" do %>
-            <li><i class="fa fa-github" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
+            <li><i class="fa fa-github text-muted" style="color:black; font-size:1.5rem; vertical-align: sub;"></i></li>
           <% end %>
           <!-- <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
         </ul>
