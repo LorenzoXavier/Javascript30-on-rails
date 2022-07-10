@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   get '/checkbox', to: "pages#checkbox"
   get '/custom-video-player', to: "pages#custom_video_player"
   get '/easter-egg', to: "pages#easter_egg"
+  get '/slide-in', to: "pages#slide_in"
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
