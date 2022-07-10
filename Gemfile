@@ -9,6 +9,9 @@ gem "font-awesome-rails"
 # devise for log in
 gem 'devise'
 
+# pagination
+gem 'pagy'
+
 # Binding pry
 gem 'pry-byebug'
 
