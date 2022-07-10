@@ -1,11 +1,11 @@
 item = Item.new(
-  title: "Custom video player controls",
-  image: "https://res.cloudinary.com/du089vmk8/image/upload/v1657448177/video.png",
-  lesson: "11",
-  description: "Video player that has custom volume, speed, skip, play and pause functions using Javascript",
-  link: "custom-video-player",
-  code: "https://github.com/LorenzoXavier/Javascript30-on-rails/blob/master/app/views/pages/custom_video_player.html.erb",
-  css: "https://github.com/LorenzoXavier/Javascript30-on-rails/blob/master/app/assets/stylesheets/pages/_custom_video_player.scss"
+  title: "Konami easter egg hunt",
+  image: "https://res.cloudinary.com/du089vmk8/image/upload/v1657462265/easter_egg.jpg",
+  lesson: "12",
+  description: "Key sequence detection. Konami code easter egg hunt, found by typing specific words on site page",
+  link: "easter-egg",
+  code: "https://github.com/LorenzoXavier/Javascript30-on-rails/blob/master/app/views/pages/easter_egg.html.erb",
+  css: "https://github.com/LorenzoXavier/Javascript30-on-rails/blob/master/app/assets/stylesheets/pages/_ceaster_egg.scss"
 )
 puts "item created"
 item.save!
