@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
 
+  include Pagy::Backend
+
   private
 
   def authenticate_admin!
