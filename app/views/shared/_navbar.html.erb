@@ -7,21 +7,21 @@
       </a>
           <ul class="social-icons">
             <ul class="no-animation">
-              <li style="margin-right: 1rem; background-color:none;"><%= link_to "Home", root_path, style: "background-color: #effbfb;" %></li>
+              <li style="margin-right: 4rem; background-color:none;"><%= link_to "Home", root_path, style: "background-color: #effbfb;" %></li>
             </ul>
             <% if user_signed_in? != true %>
               <!-- <li></%= link_to "Sign Up", new_user_registration_path %></li> -->
-              <li style="margin-right: 4rem; background-color:none;"><%= link_to "Login", new_user_session_path, style: "background-color: #effbfb;" %></li>
-              <%= mail_to "weigheasy2022@gmail.com" do %>
+              <!-- <li style="margin-right: 4rem; background-color:none;"></%= link_to "Login", new_user_session_path, style: "background-color: #effbfb;" %></li> -->
+              <%= mail_to "lorenzo.cursley@gmail.com" do %>
                 <i class="fa fa-envelope"></i>
               <% end %>
               <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook-f" href="#"></i></a></li>
               <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
               <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
-              <li><a class="whatsapp" href="#" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+              <li><a class="whatsapp" href="https://wa.me/00447594638937" target="blank"><i class="fa fa-whatsapp"></i></a></li>
               <div style="margin: 0 3rem;">
                 <%= link_to "https://github.com/LorenzoXavier" do %>
-                  <li><i class="fa fa-github" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
+                  <li><i class="fa fa-github text-muted" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
                 <% end %>
               </div>
             </ul>
@@ -52,13 +52,27 @@
     <div>
       <div>
         <ul>
-          <a href="https://www.weigheasy.com/">
-            <img alt="Weigh Easy" src="https://res.cloudinary.com/weigheasy/image/upload/v1644103048/Weigh_easy_logo_no_border_white_yvh3pi.svg" style="width: 100px; height:60px; margin-top: 20px; margin-bottom: 5px;">
+          <a href="https://js-30-rails.herokuapp.com">
+            <img alt="Javasrcipt" src="https://res.cloudinary.com/du089vmk8/image/upload/v1655416826/js_logo.svg" style="width: 150px; height:60px; margin-top: 5px; margin-bottom: 5px;">
           </a>
            <br><br>
             <% unless user_signed_in? %>
-              <li><%= link_to "Login", new_user_session_path%></li>
-              <li><%= link_to "Sign Up", new_user_registration_path%></li>
+              <li><%= link_to "Home", root_path %></li>
+              <!-- <li></%= link_to "Sign Up", new_user_registration_path%></li> -->
+              <ul class="social-icons mt-4 social-responsive">
+                <%= mail_to "lorenzo.cursley@gmail.com" do %>
+                  <li><i class="fa fa-envelope"></i></li>
+                <% end %>
+                <!-- <li><a class="facebook" href="#"><i class="fa fa-facebook-f" href="#"></i></a></li>
+                <li><a class="twitter" href="#"><i class="fa fa-twitter"></i></a></li>
+                <li><a class="linkedin" href="#"><i class="fa fa-linkedin"></i></a></li> -->
+                <li><a class="whatsapp" href="https://wa.me/00447594638937" target="blank"><i class="fa fa-whatsapp"></i></a></li>
+                <div style="margin: 0 3rem;">
+                  <%= link_to "https://github.com/LorenzoXavier" do %>
+                    <li><i class="fa fa-github text-muted" style="color:black; font-size:1.5rem; margin-top: 10px;"></i></li>
+                  <% end %>
+                </div>
+              </ul>
             <% else %>
               <div class="avatar-container">
                 <div class="hamburger-avatar-sizing">
