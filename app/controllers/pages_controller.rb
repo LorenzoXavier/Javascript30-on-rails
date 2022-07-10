@@ -1,10 +1,6 @@
 class PagesController < ApplicationController
   def index
-    @pagy, @items = pagy(Item.all, items: 9)
+    @pagy, @items = pagy(Item.all.order("created_at ASC"), items: 9)
     # @items = Item.all
   end
-
-  def drumkit
-  end
-
 end
