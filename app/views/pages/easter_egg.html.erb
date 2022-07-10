@@ -1,0 +1,34 @@
+<script type="text/javascript" src="http://www.cornify.com/js/cornify.js"></script>
+<div style="min-height: 85vh;" class="text-center">
+  <h1>Easter egg hunt!</h1>
+  <h4>There are two easter eggs:<br>- Type hacker <br>- Type lorenzo</h4>
+  <div id="hack" hidden style="height: 10%;">
+    <img src="https://res.cloudinary.com/du089vmk8/image/upload/v1657461567/hack.jpg" alt="easter_egg">
+  </div>
+</div>
+<script >
+  const pressed =[];
+  const secretCode = 'lorenzo';
+  window.addEventListener('keyup', (e) => {
+    pressed.push(e.key);
+    // splice below - starting from the end of secret code. the math after pulls the correct amount of letters into the array, and pushes the first of the array out.
+    pressed.splice(- secretCode.length - 1, pressed.length -secretCode.length)
+    console.log(pressed);
+    if(pressed.join('').includes(secretCode)) {
+      cornify_add();
+    }
+    });
+
+  const typed =[];
+  const correctCode = 'hacker';
+  window.addEventListener('keyup', (e) => {
+    typed.push(e.key);
+    typed.splice(- correctCode.length - 1, typed.length -correctCode.length)
+    console.log(typed);
+    // removes hidden from the div above
+    if(typed.join('').includes(correctCode)) {
+      let div = document.getElementById('hack');
+      div.removeAttribute("hidden");
+    }
+    });
+</script>

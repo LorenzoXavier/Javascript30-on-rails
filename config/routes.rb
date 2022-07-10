@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   get '/dev-tools', to: "pages#dev_tools"
   get '/checkbox', to: "pages#checkbox"
   get '/custom-video-player', to: "pages#custom_video_player"
+  get '/easter-egg', to: "pages#easter_egg"
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
