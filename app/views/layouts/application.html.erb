@@ -14,7 +14,10 @@
   </head>
 
   <body>
-    <div class="responsive-navbar-padding"></div>
+
+    <% unless current_page?(local_storage_path) %>
+      <div class="responsive-navbar-padding"></div>
+    <% end %>
     <%= render "shared/navbar" %>
     <%= render "shared/flash" %>
     <%= yield %>
