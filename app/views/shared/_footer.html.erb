@@ -8,7 +8,7 @@
       <div class="col-xs-6 col-lg-3">
         <h6>Javascript challenges ...</h6>
         <ul class="footer-links">
-          <% Item.first(15).each do |item| %>
+          <% Item.first(7).each do |item| %>
             <li> <%=link_to "#{item.title}", item.link %></li>
           <% end %>
         </ul>
@@ -16,10 +16,9 @@
       <div class="col-xs-6 col-lg-3">
         <h6>... continued</h6>
         <ul class="footer-links">
-          <!--
-          </% Item.last(15).each do |item| %>
-            <li> </%=link_to "#{item.title}", item.link %></li>
-          </% end %> -->
+          <% Item.last(7).each do |item| %>
+            <li> <%=link_to "#{item.title}", item.link %></li>
+          <% end %>
         </ul>
       </div>
     </div>
